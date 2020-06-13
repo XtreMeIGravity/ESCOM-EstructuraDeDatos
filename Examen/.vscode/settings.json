@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "lista.h": "c",
+        "elem.h": "c"
+    }
+}

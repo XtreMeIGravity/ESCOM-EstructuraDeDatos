@@ -1,0 +1,18 @@
+/*Espec Pila
+	empty:->Pila;
+	push:Elem,Pila->Pila;
+	
+	isempty:Pila->Bool;
+	top:Pila->Elem;
+	pop:Pila->Pila;
+	
+	Axiomas Elem e Pila p;
+	
+	p1: isempty(empty)=Cierto;
+	p2: isempty(push(e,p)=Falso;
+	p3: top(empty())=ERROR;
+	p4: top(push(e,p))=e;
+	p5: pop(empty())=ERROR;
+	p6: pop(push(e,p))=p;
+
+	Cadena , despliege  caracter

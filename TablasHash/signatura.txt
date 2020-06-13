@@ -1,0 +1,28 @@
+Espec hash 
+    tVacia:->Hash
+    tEsVacia:Hash->Bool
+    tInsertar:Hash,Cardinal,Elem->Hash
+    tRecupera:Hash,Cardinal->Elem
+    tEstaEn:Hash ,Cardinal ->Bool
+
+Axiomas: Hash h, Cardinal k , j , Elem e;
+    h1:tEsVacia(tVacia())= true;
+    h2:tEsVacia(tInsertar(h,k,e))=Falso;
+    h3:tRecupera(tVacia())= ERROR;
+    h4:tRecupera(tInsertar(h,k,e),j)=
+        Si k==j
+            return e;
+        Else
+            return tRecupera(h,j);
+            
+    h5:tEstaEn(tVacia(),j)=Falso;
+    h6:tEstaEn(tInsertar(h,k,e),j)=
+        Si k==j
+            return true;
+        Else
+            return tEstaEn(h,j);
+Fin Hash
+
+
+
+while (fscanf(Elementoss,"%d",numeroatomico)!=EOF && fscanf(Elementoss,"%s",simbolo)!=EOF && fscanf(Elementoss,"%s",nombre)!=EOF){

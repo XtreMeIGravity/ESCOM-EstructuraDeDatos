@@ -1,0 +1,33 @@
+*******************************************************
+Signatura
+
+	Espec Bicola;
+		//Consturctoras
+		nuevaB:->Bicola;
+		formarI:Elem,Bicola->Bicola;
+		formarD:Bicola,Elem->Bicola;
+		//Observadoras
+		esNuevaB:Bicola->Bool;
+		izquierdo:Bicola->Elem
+		derecho:Bicola->Elem
+		//desdobladores
+		desformarR:Bicola->Bicola
+		desformarD:Bicola->Bicola
+
+	
+	Axiomas: Elem e, Bicola b;
+		b1:esnuevab(nuevab())=Cierto;
+		b2:esnuevab(formari(e,b))=Falso;
+		b3:esnuevab(formard(b.e))=Falso;
+		b4:izquierdo(nuevab())=ERROR;
+		b5:izquierdo(formari(e,b))=e;
+		b6:izquierdo(formard(b,e))=Si esnuevab(b) return e; sino return izquierdo(b);
+		b7:derecho(nuevab())=ERROR;
+		b8:derecho(formari(e,b))= si esnuevab(b) return e; sino return derecho(b);
+		b9derecho(formar(b,e))=e;
+		b10:desformari(nuevab())=ERROR;
+		b11:desformari(formari(e,b))=b;
+		b12:desformari(formard(b,e))=Si esnuevab(b) return b; sino return formard(desformari(b),e);
+		b13:desformard(nuevab())=ERROR;
+		b14:desformard(formari(e,b))=Si esnuevab(b) return b; else return formari(e,desformard(b));
+		b15:desformard(formard(b,e))=b;
